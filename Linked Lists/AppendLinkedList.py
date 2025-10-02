@@ -108,6 +108,21 @@ class LinkedList:
       self.length += 1
       return True
 
+    def Remove(self, index):
+      if index < 0 or index >= self.length:
+          return None
+      if index == 0:
+          return self.pop_first()
+      if index == self.length -1:
+          return self.pop()
+      pre = self.Get(index-1)
+      temp= pre.next
+      pre.next = temp.next
+      temp.next = None
+      self.length -=1
+      return temp
+
+
 
 
 
@@ -118,6 +133,8 @@ my_linked_list.Append(2)
 
 print(my_linked_list.print_list())
 print(my_linked_list.Insert(1, 1))
+print(my_linked_list.print_list())
+print(my_linked_list.Remove(1))
 print(my_linked_list.print_list())
 # # print(my_linked_list.Pop())
 
