@@ -6,7 +6,7 @@ class Node:
 class Stack:
     def __init__(self,Value):
         new_node = Node(Value)
-        self.top = None
+        self.top = new_node
         self.height = 1
 
     def print_stack(self):
